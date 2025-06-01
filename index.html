@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbora & Martin - Wedding</title>
+    <title>Barbora & Martin - Svatba</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;500;600&family=Dancing+Script:wght@400;600&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="stars"></div>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#hero" class="nav-link">Home</a>
-            <a href="#info" class="nav-link">Info</a>
-            <a href="#timeline" class="nav-link">Timeline</a>
-            <a href="#colors" class="nav-link">Colors</a>
-            <a href="#people" class="nav-link">Important People</a>
-            <a href="#photos" class="nav-link">Photos</a>
+            <a href="#hero" class="nav-link">Úvod</a>
+            <a href="#announcement" class="nav-link">Oznámení</a>
+            <a href="#place" class="nav-link">Místo</a>
+            <a href="#timeline" class="nav-link">Program</a>
+            <a href="#colors" class="nav-link">Barvy</a>
+            <a href="#people" class="nav-link">Svědci</a>
+            <a href="#gifts" class="nav-link">Dary</a>
+            <a href="#questions" class="nav-link">Otázky</a>
+            <a href="#photos" class="nav-link">Fotky</a>
         </div>
     </nav>
 
@@ -24,6 +28,10 @@
     <section id="hero" class="hero">
         <div class="hero-content">
             <div class="geometric-frame">
+                <div class="frame-corner frame-corner-tl"></div>
+                <div class="frame-corner frame-corner-tr"></div>
+                <div class="frame-corner frame-corner-bl"></div>
+                <div class="frame-corner frame-corner-br"></div>
                 <h1 class="couple-names">
                     <span class="bride-name">BARBORA</span>
                     <span class="ampersand">&</span>
@@ -33,50 +41,75 @@
             </div>
         </div>
         <div class="autumn-leaves"></div>
-        <div class="stars"></div>
     </section>
 
-    <!-- Important Information -->
-    <section id="info" class="info-section">
+    <div class="section-divider-ornate">
+        <div class="divider-center"></div>
+    </div>
+
+    <!-- Announcement Section -->
+    <section id="announcement" class="announcement-section">
         <div class="container">
-            <h2 class="section-title">Important Information</h2>
-            
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>Date & Time</h3>
-                    <p class="info-detail">Saturday, September 27th, 2025</p>
-                    <p class="info-detail">Ceremony: 3:00 PM</p>
-                    <p class="info-detail">Reception: 6:00 PM</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>Venue</h3>
-                    <p class="info-detail">[Venue Name]</p>
-                    <p class="info-detail">[Address Line 1]</p>
-                    <p class="info-detail">[Address Line 2]</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>Contact Information</h3>
-                    <p class="info-detail">RSVP: [Email/Phone]</p>
-                    <p class="info-detail">Questions: [Contact]</p>
-                    <p class="info-detail">Dress Code: [Code]</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>Special Notes</h3>
-                    <p class="info-detail">[Special instructions]</p>
-                    <p class="info-detail">[Accommodation info]</p>
-                    <p class="info-detail">[Transportation]</p>
+            <h2 class="section-title">Oznámení</h2>
+            <div class="announcement-content">
+                <p class="announcement-text">
+                    S radostí v srdci oznamujeme, že jsme se rozhodli spojit naše životy v jedno a vstoupit do manželství. 
+                    Naše láska, která začala jako přátelství, vyrostla v něco krásného a jedinečného.
+                </p>
+                <p class="announcement-text">
+                    Rádi bychom tento významný okamžik sdíleli s našimi nejbližšími - s rodinou a přáteli, 
+                    kteří jsou součástí našeho příběhu. Proto Vás srdečně zveme na náš svatební den.
+                </p>
+                <p class="announcement-text highlight">
+                    Přijďte s námi oslavit začátek naší společné cesty životem.
+                </p>
+                <div class="announcement-signature">
+                    <p>S láskou,</p>
+                    <p>Barbora & Martin</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Timeline Tree -->
+    <div class="section-divider-ornate">
+        <div class="divider-center"></div>
+    </div>
+
+    <!-- Place Section -->
+    <section id="place" class="place-section">
+        <div class="container">
+            <h2 class="section-title">Místo konání</h2>
+            <div class="place-content">
+                <div class="venue-details">
+                    <div class="venue-card">
+                        <h3>Obřad & Hostina</h3>
+                        <p class="venue-time">Sobota, 27. září 2025</p>
+                        <p class="venue-time">Obřad: 3:00 PM</p>
+                        <p class="venue-time">Hostina: 6:00 PM</p>
+                        <div class="venue-address">
+                            <p>[Název místa]</p>
+                            <p>[Ulice a číslo]</p>
+                            <p>[Město, PSČ]</p>
+                        </div>
+                        <a href="#" class="directions-btn" target="_blank">Navigovat</a>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <div id="venue-map"></div>
+                </div>
+            </div>
+        </div>
+        <div class="floating-leaves"></div>
+    </section>
+
+    <div class="section-divider-ornate">
+        <div class="divider-center"></div>
+    </div>
+
+    <!-- Timeline Section -->
     <section id="timeline" class="timeline-section">
         <div class="container">
-            <h2 class="section-title">Wedding Day Timeline</h2>
+            <h2 class="section-title">Program svatebního dne</h2>
             
             <div class="tree-container">
                 <div class="tree-trunk"></div>
@@ -84,8 +117,8 @@
                 <div class="timeline-event left" data-time="2:00 PM">
                     <div class="event-branch"></div>
                     <div class="event-content">
-                        <h4>Getting Ready</h4>
-                        <p>Bridal party preparation</p>
+                        <h4>Přípravy</h4>
+                        <p>Příprava nevěsty a ženicha</p>
                     </div>
                     <div class="autumn-leaf leaf-1"></div>
                 </div>
@@ -93,8 +126,8 @@
                 <div class="timeline-event right" data-time="2:30 PM">
                     <div class="event-branch"></div>
                     <div class="event-content">
-                        <h4>First Look</h4>
-                        <p>Private moment for the couple</p>
+                        <h4>První pohled</h4>
+                        <p>Soukromý moment pro nevěstu a ženicha</p>
                     </div>
                     <div class="autumn-leaf leaf-2"></div>
                 </div>
@@ -102,8 +135,8 @@
                 <div class="timeline-event left" data-time="3:00 PM">
                     <div class="event-branch"></div>
                     <div class="event-content">
-                        <h4>Ceremony</h4>
-                        <p>Exchange of vows</p>
+                        <h4>Obřad</h4>
+                        <p>Svatební slib</p>
                     </div>
                     <div class="autumn-leaf leaf-3"></div>
                 </div>
@@ -111,8 +144,8 @@
                 <div class="timeline-event right" data-time="3:30 PM">
                     <div class="event-branch"></div>
                     <div class="event-content">
-                        <h4>Cocktail Hour</h4>
-                        <p>Drinks and mingling</p>
+                        <h4>Přípitek</h4>
+                        <p>Společný přípitek a gratulace</p>
                     </div>
                     <div class="autumn-leaf leaf-1"></div>
                 </div>
@@ -120,8 +153,8 @@
                 <div class="timeline-event left" data-time="4:30 PM">
                     <div class="event-branch"></div>
                     <div class="event-content">
-                        <h4>Photos</h4>
-                        <p>Group and family photos</p>
+                        <h4>Focení</h4>
+                        <p>Skupinové a rodinné fotky</p>
                     </div>
                     <div class="autumn-leaf leaf-2"></div>
                 </div>
@@ -129,8 +162,8 @@
                 <div class="timeline-event right" data-time="6:00 PM">
                     <div class="event-branch"></div>
                     <div class="event-content">
-                        <h4>Reception</h4>
-                        <p>Dinner and celebration</p>
+                        <h4>Hostina</h4>
+                        <p>Večeře a oslava</p>
                     </div>
                     <div class="autumn-leaf leaf-3"></div>
                 </div>
@@ -138,8 +171,8 @@
                 <div class="timeline-event left" data-time="7:00 PM">
                     <div class="event-branch"></div>
                     <div class="event-content">
-                        <h4>Speeches</h4>
-                        <p>Toasts from loved ones</p>
+                        <h4>Proslovy</h4>
+                        <p>Přípitky od blízkých</p>
                     </div>
                     <div class="autumn-leaf leaf-1"></div>
                 </div>
@@ -147,8 +180,8 @@
                 <div class="timeline-event right" data-time="8:00 PM">
                     <div class="event-branch"></div>
                     <div class="event-content">
-                        <h4>First Dance</h4>
-                        <p>Couple's special moment</p>
+                        <h4>První tanec</h4>
+                        <p>Speciální moment novomanželů</p>
                     </div>
                     <div class="autumn-leaf leaf-2"></div>
                 </div>
@@ -156,8 +189,8 @@
                 <div class="timeline-event left" data-time="8:30 PM">
                     <div class="event-branch"></div>
                     <div class="event-content">
-                        <h4>Dancing</h4>
-                        <p>Party time begins</p>
+                        <h4>Tanec</h4>
+                        <p>Začíná párty</p>
                     </div>
                     <div class="autumn-leaf leaf-3"></div>
                 </div>
@@ -165,8 +198,8 @@
                 <div class="timeline-event right" data-time="12:00 AM">
                     <div class="event-branch"></div>
                     <div class="event-content">
-                        <h4>Grand Finale</h4>
-                        <p>Last dance and farewell</p>
+                        <h4>Závěr</h4>
+                        <p>Poslední tanec a rozloučení</p>
                     </div>
                     <div class="autumn-leaf leaf-1"></div>
                 </div>
@@ -174,182 +207,226 @@
         </div>
     </section>
 
-    <!-- Color Palette Section -->
+    <div class="section-divider-ornate">
+        <div class="divider-center"></div>
+    </div>
+
+    <!-- Colors Section -->
     <section id="colors" class="colors-section">
         <div class="container">
-            <h2 class="section-title">Wedding Color Palette</h2>
-            <p class="colors-description">Our autumn-inspired color scheme reflects the magical atmosphere of our special day</p>
+            <h2 class="section-title">Barevné téma svatby</h2>
+            <p class="colors-description">Naše podzimní barevná paleta odráží kouzelnou atmosféru našeho speciálního dne</p>
             
             <div class="color-palette-grid">
                 <div class="color-item">
                     <div class="color-disc-large" style="background: #1a237e;"></div>
                     <div class="color-info">
-                        <h4>Midnight Navy</h4>
-                        <p>Deep evening elegance</p>
+                        <h4>Půlnoční modrá</h4>
+                        <p>Večerní elegance</p>
                     </div>
                     <div class="color-photo">
-                        <img src="https://via.placeholder.com/200x250/1a237e/ffffff?text=Navy+Outfit" alt="Navy outfit inspiration">
+                        <img src="https://via.placeholder.com/200x250/1a237e/ffffff?text=Modré+Oblečení" alt="Inspirace modrým oblečením">
                     </div>
                 </div>
 
                 <div class="color-item">
                     <div class="color-disc-large" style="background: #ff6f00;"></div>
                     <div class="color-info">
-                        <h4>Autumn Orange</h4>
-                        <p>Vibrant fall warmth</p>
+                        <h4>Podzimní oranžová</h4>
+                        <p>Teplé podzimní tóny</p>
                     </div>
                     <div class="color-photo">
-                        <img src="https://via.placeholder.com/200x250/ff6f00/ffffff?text=Orange+Outfit" alt="Orange outfit inspiration">
+                        <img src="https://via.placeholder.com/200x250/ff6f00/ffffff?text=Oranžové+Doplňky" alt="Inspirace oranžovými doplňky">
                     </div>
                 </div>
 
                 <div class="color-item">
                     <div class="color-disc-large" style="background: #ffa726;"></div>
                     <div class="color-info">
-                        <h4>Golden Amber</h4>
-                        <p>Warm sunset glow</p>
+                        <h4>Zlatý jantar</h4>
+                        <p>Záře zapadajícího slunce</p>
                     </div>
                     <div class="color-photo">
-                        <img src="https://via.placeholder.com/200x250/ffa726/ffffff?text=Amber+Outfit" alt="Amber outfit inspiration">
+                        <img src="https://via.placeholder.com/200x250/ffa726/ffffff?text=Jantarové+Doplňky" alt="Inspirace jantarovými doplňky">
                     </div>
                 </div>
 
                 <div class="color-item">
                     <div class="color-disc-large" style="background: #ffb74d;"></div>
                     <div class="color-info">
-                        <h4>Honey Gold</h4>
-                        <p>Soft autumn light</p>
+                        <h4>Medová</h4>
+                        <p>Jemné podzimní světlo</p>
                     </div>
                     <div class="color-photo">
-                        <img src="https://via.placeholder.com/200x250/ffb74d/ffffff?text=Gold+Outfit" alt="Gold outfit inspiration">
+                        <img src="https://via.placeholder.com/200x250/ffb74d/ffffff?text=Medové+Doplňky" alt="Inspirace medovými doplňky">
                     </div>
                 </div>
 
                 <div class="color-item">
                     <div class="color-disc-large" style="background: #8d6e63;"></div>
                     <div class="color-info">
-                        <h4>Rustic Brown</h4>
-                        <p>Earthy foundation</p>
+                        <h4>Rustikální hnědá</h4>
+                        <p>Zemité tóny</p>
                     </div>
                     <div class="color-photo">
-                        <img src="https://via.placeholder.com/200x250/8d6e63/ffffff?text=Brown+Outfit" alt="Brown outfit inspiration">
+                        <img src="https://via.placeholder.com/200x250/8d6e63/ffffff?text=Hnědé+Doplňky" alt="Inspirace hnědými doplňky">
                     </div>
                 </div>
 
                 <div class="color-item">
                     <div class="color-disc-large" style="background: #d4af37;"></div>
                     <div class="color-info">
-                        <h4>Champagne Gold</h4>
-                        <p>Celebration sparkle</p>
+                        <h4>Šampaňské zlato</h4>
+                        <p>Slavnostní třpyt</p>
                     </div>
                     <div class="color-photo">
-                        <img src="https://via.placeholder.com/200x250/d4af37/ffffff?text=Champagne+Outfit" alt="Champagne outfit inspiration">
+                        <img src="https://via.placeholder.com/200x250/d4af37/ffffff?text=Zlaté+Doplňky" alt="Inspirace zlatými doplňky">
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="section-divider-ornate">
+        <div class="divider-center"></div>
+    </div>
 
     <!-- Important People Section -->
     <section id="people" class="people-section">
         <div class="container">
-            <h2 class="section-title">Important People</h2>
-            <p class="people-description">The special people who will stand by our side on our wedding day</p>
+            <h2 class="section-title">Svědci</h2>
+            <p class="people-description">Výjimeční lidé, kteří budou stát po našem boku v tento speciální den</p>
             
             <div class="people-grid">
                 <div class="person-card featured">
                     <div class="person-image">
-                        <img src="https://via.placeholder.com/200x200/d4af37/ffffff?text=Best+Man" alt="Best Man">
+                        <img src="https://via.placeholder.com/200x200/d4af37/ffffff?text=Svědek" alt="Svědek">
                     </div>
                     <div class="person-content">
-                        <h3>[Best Man Name]</h3>
-                        <p class="person-role">Best Man</p>
-                        <p class="person-description">[Brief description of relationship and why they're special to the groom]</p>
+                        <h3>[Jméno svědka]</h3>
+                        <p class="person-role">Svědek</p>
+                        <p class="person-description">[Krátký popis vztahu a proč je důležitý pro ženicha]</p>
                     </div>
                 </div>
 
                 <div class="person-card featured">
                     <div class="person-image">
-                        <img src="https://via.placeholder.com/200x200/ff6f00/ffffff?text=Maid+of+Honor" alt="Maid of Honor">
+                        <img src="https://via.placeholder.com/200x200/ff6f00/ffffff?text=Svědkyně" alt="Svědkyně">
                     </div>
                     <div class="person-content">
-                        <h3>[Maid of Honor Name]</h3>
-                        <p class="person-role">Maid of Honor</p>
-                        <p class="person-description">[Brief description of relationship and why they're special to the bride]</p>
-                    </div>
-                </div>
-
-                <div class="person-card">
-                    <div class="person-image">
-                        <img src="https://via.placeholder.com/150x150/ffa726/ffffff?text=Groomsman" alt="Groomsman 1">
-                    </div>
-                    <div class="person-content">
-                        <h4>[Groomsman Name]</h4>
-                        <p class="person-role">Groomsman</p>
-                    </div>
-                </div>
-
-                <div class="person-card">
-                    <div class="person-image">
-                        <img src="https://via.placeholder.com/150x150/ffb74d/ffffff?text=Bridesmaid" alt="Bridesmaid 1">
-                    </div>
-                    <div class="person-content">
-                        <h4>[Bridesmaid Name]</h4>
-                        <p class="person-role">Bridesmaid</p>
-                    </div>
-                </div>
-
-                <div class="person-card">
-                    <div class="person-image">
-                        <img src="https://via.placeholder.com/150x150/8d6e63/ffffff?text=Groomsman" alt="Groomsman 2">
-                    </div>
-                    <div class="person-content">
-                        <h4>[Groomsman Name]</h4>
-                        <p class="person-role">Groomsman</p>
-                    </div>
-                </div>
-
-                <div class="person-card">
-                    <div class="person-image">
-                        <img src="https://via.placeholder.com/150x150/1a237e/ffffff?text=Bridesmaid" alt="Bridesmaid 2">
-                    </div>
-                    <div class="person-content">
-                        <h4>[Bridesmaid Name]</h4>
-                        <p class="person-role">Bridesmaid</p>
-                    </div>
-                </div>
-
-                <div class="person-card">
-                    <div class="person-image">
-                        <img src="https://via.placeholder.com/150x150/ff6f00/ffffff?text=Officiant" alt="Officiant">
-                    </div>
-                    <div class="person-content">
-                        <h4>[Officiant Name]</h4>
-                        <p class="person-role">Officiant</p>
-                    </div>
-                </div>
-
-                <div class="person-card">
-                    <div class="person-image">
-                        <img src="https://via.placeholder.com/150x150/ffa726/ffffff?text=Ring+Bearer" alt="Ring Bearer">
-                    </div>
-                    <div class="person-content">
-                        <h4>[Ring Bearer Name]</h4>
-                        <p class="person-role">Ring Bearer</p>
+                        <h3>[Jméno svědkyně]</h3>
+                        <p class="person-role">Svědkyně</p>
+                        <p class="person-description">[Krátký popis vztahu a proč je důležitá pro nevěstu]</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <div class="section-divider-ornate">
+        <div class="divider-center"></div>
+    </div>
+
+    <!-- Gifts Section -->
+    <section id="gifts" class="gifts-section">
+        <div class="container">
+            <h2 class="section-title">Svatební dary</h2>
+            <div class="gifts-content">
+                <p class="gifts-text">
+                    Vaše přítomnost na naší svatbě je pro nás tím největším darem. 
+                    Váš čas a sdílená radost znamenají více než cokoliv jiného.
+                </p>
+                
+                <p class="gifts-text">
+                    Pokud byste nás přesto chtěli potěšit dárkem, nejvíce oceníme příspěvek 
+                    do společného fondu na naši svatební cestu a začátek společného života.
+                </p>
+
+                <p class="gifts-text highlight">
+                    Pro ty, kteří by rádi přispěli, zde jsou bankovní údaje:
+                </p>
+
+                <div class="bank-details-elegant">
+                    <p>Číslo účtu: [Číslo účtu]</p>
+                    <p>Banka: [Název banky]</p>
+                    <p>IBAN: [IBAN]</p>
+                </div>
+
+                <p class="gifts-text">
+                    Pokud preferujete výběr konkrétního daru, vytvořili jsme seznam přání, 
+                    který najdete na tomto odkazu:
+                </p>
+
+                <a href="#" class="elegant-link">Seznam přání</a>
+
+                <div class="gifts-signature">
+                    <p>Děkujeme za Vaši lásku a podporu</p>
+                    <p>Barbora & Martin</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider-ornate">
+        <div class="divider-center"></div>
+    </div>
+
+    <!-- Questions Section -->
+    <section id="questions" class="questions-section">
+        <div class="container">
+            <h2 class="section-title">Často kladené otázky</h2>
+            <div class="questions-grid">
+                <div class="question-card">
+                    <h3>Dress Code</h3>
+                    <p class="question">Jaké je doporučené oblečení?</p>
+                    <p class="answer">Doporučujeme formální oblečení v barvách naší svatby. Pánové mohou zvolit oblek, dámy koktejlové nebo dlouhé šaty.</p>
+                </div>
+
+                <div class="question-card">
+                    <h3>Doprava</h3>
+                    <p class="question">Bude zajištěna doprava na místo konání?</p>
+                    <p class="answer">Ano, pro hosty bude zajištěna kyvadlová doprava z centra města. Detaily o časech a místech odjezdu budou upřesněny.</p>
+                </div>
+
+                <div class="question-card">
+                    <h3>Ubytování</h3>
+                    <p class="question">Je možné zajistit ubytování?</p>
+                    <p class="answer">Pro zájemce máme předběžně rezervované pokoje v blízkém hotelu. Prosíme o potvrzení zájmu o ubytování v rámci potvrzení účasti.</p>
+                </div>
+
+                <div class="question-card">
+                    <h3>Děti</h3>
+                    <p class="question">Jsou vítány i děti?</p>
+                    <p class="answer">Ano, děti jsou vítány. Pro nejmenší bude připraven dětský koutek s programem a hlídáním.</p>
+                </div>
+
+                <div class="question-card">
+                    <h3>Harmonogram</h3>
+                    <p class="question">V kolik hodin mám dorazit?</p>
+                    <p class="answer">Prosíme o příchod nejpozději 30 minut před začátkem obřadu, tedy ve 14:30. Budeme rádi, když si na tento den rezervujete čas až do půlnoci.</p>
+                </div>
+
+                <div class="question-card">
+                    <h3>Parkování</h3>
+                    <p class="question">Kde mohu zaparkovat?</p>
+                    <p class="answer">U místa konání je k dispozici dostatečně velké parkoviště pro všechny hosty zdarma.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider-ornate">
+        <div class="divider-center"></div>
+    </div>
+
     <!-- Photo Album Section -->
     <section id="photos" class="photos-section">
         <div class="container">
-            <h2 class="section-title">Wedding Photos</h2>
+            <h2 class="section-title">Svatební fotografie</h2>
             <div class="photo-album-content">
-                <p>Relive our special moments through our wedding photo collection</p>
-                <a href="http://www.fotoalbum.com" target="_blank" class="photo-album-btn">
-                    <span>View Photo Album</span>
+                <p>Prožijte s námi znovu naše speciální okamžiky prostřednictvím svatebních fotografií</p>
+                <a href="https://drive.google.com/drive/folders/1yt-DK6pHZi4zjJrLvbg4cufN6NmTEqbG?usp=drive_link" target="_blank" class="photo-album-btn">
+                    <span>Zobrazit fotoalbum</span>
                     <div class="btn-decoration"></div>
                 </a>
             </div>
@@ -359,10 +436,11 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Barbora & Martin Wedding. Made with ❤️</p>
+            <p>&copy; 2025 Barbora & Martin Svatba. Vytvořeno s ❤️</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 </body>
 </html> 

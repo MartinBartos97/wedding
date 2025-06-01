@@ -82,27 +82,46 @@ function createFloatingLeaf() {
 // Create floating leaves periodically
 setInterval(createFloatingLeaf, 3000);
 
-// Add stars twinkling effect
-function createTwinklingStar() {
-    const star = document.createElement('div');
-    star.innerHTML = '✨';
-    star.style.position = 'fixed';
-    star.style.top = Math.random() * window.innerHeight + 'px';
-    star.style.left = Math.random() * window.innerWidth + 'px';
-    star.style.fontSize = '1rem';
-    star.style.pointerEvents = 'none';
-    star.style.zIndex = '1';
-    star.style.animation = 'twinkle 2s ease-in-out';
+// Create and manage stars
+function createStars() {
+    const starsContainer = document.querySelector('.stars');
+    if (!starsContainer) {
+        const container = document.createElement('div');
+        container.className = 'stars';
+        document.body.appendChild(container);
+    }
     
-    document.body.appendChild(star);
+    const container = document.querySelector('.stars');
+    container.innerHTML = ''; // Clear existing stars
     
-    setTimeout(() => {
-        star.remove();
-    }, 2000);
+    // Create approximately 20 stars per viewport
+    const viewportHeight = window.innerHeight;
+    const viewportWidth = window.innerWidth;
+    const numberOfStars = Math.floor((viewportHeight * viewportWidth) / (1920 * 1080) * 20);
+    
+    for (let i = 0; i < numberOfStars; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        
+        // Random position
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        
+        // Random size between 2px and 4px
+        const size = 2 + Math.random() * 2;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        
+        // Random twinkle duration between 2s and 4s
+        star.style.setProperty('--twinkle-duration', `${2 + Math.random() * 2}s`);
+        
+        container.appendChild(star);
+    }
 }
 
-// Create twinkling stars periodically
-setInterval(createTwinklingStar, 2000);
+// Initialize stars and handle window resize
+createStars();
+window.addEventListener('resize', createStars);
 
 // Enhanced hover effects for timeline events
 document.querySelectorAll('.timeline-event').forEach(event => {
@@ -176,4 +195,66 @@ if (photoBtn) {
     photoBtn.addEventListener('mouseleave', function() {
         this.style.background = 'linear-gradient(135deg, #d4af37, #ffa726)';
     });
-} 
+}
+
+// Add Google Maps
+function initMap() {
+    // Replace with your venue's coordinates
+    const venueLocation = { lat: YOUR_LATITUDE, lng: YOUR_LONGITUDE };
+    
+    const map = new google.maps.Map(document.getElementById('venue-map'), {
+        zoom: 15,
+        center: venueLocation,
+        styles: [
+            {
+                "elementType": "geometry",
+                "stylers": [{"color": "#1a237e"}]
+            },
+            {
+                "elementType": "labels.text.stroke",
+                "stylers": [{"color": "#242f3e"}]
+            },
+            {
+                "elementType": "labels.text.fill",
+                "stylers": [{"color": "#ffa726"}]
+            }
+        ]
+    });
+
+    const marker = new google.maps.Marker({
+        position: venueLocation,
+        map: map,
+        title: 'Wedding Venue'
+    });
+}
+
+// Add floating leaves throughout the page
+function createFloatingLeaves() {
+    const leaves = ['🍂', '🍁', '🍃'];
+    const sections = document.querySelectorAll('section');
+    
+    sections.forEach(section => {
+        const floatingLeaves = document.createElement('div');
+        floatingLeaves.className = 'floating-leaves';
+        section.appendChild(floatingLeaves);
+        
+        for (let i = 0; i < 5; i++) {
+            setTimeout(() => {
+                const leaf = document.createElement('div');
+                leaf.className = 'floating-leaf';
+                leaf.innerHTML = leaves[Math.floor(Math.random() * leaves.length)];
+                leaf.style.left = Math.random() * 100 + '%';
+                leaf.style.animationDelay = Math.random() * 5 + 's';
+                floatingLeaves.appendChild(leaf);
+                
+                leaf.addEventListener('animationend', () => {
+                    leaf.remove();
+                });
+            }, i * 3000);
+        }
+    });
+}
+
+// Start floating leaves animation
+createFloatingLeaves();
+setInterval(createFloatingLeaves, 15000); 
