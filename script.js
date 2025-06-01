@@ -195,7 +195,7 @@ if (photoBtn) {
     photoBtn.addEventListener('mouseleave', function() {
         this.style.background = 'linear-gradient(135deg, #d4af37, #ffa726)';
     });
-}
+} 
 
 // Add Google Maps
 function initMap() {
