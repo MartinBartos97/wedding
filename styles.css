@@ -153,8 +153,8 @@ section {
 .couple-names {
     font-family: 'Cinzel', serif;
     font-size: 5rem;
-    font-weight: 400;
-    color: #cd9f2c;
+    font-weight: 500;
+    color: #f4c03b;
     margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
@@ -172,7 +172,7 @@ section {
 .ampersand {
     font-family: 'Cinzel', serif;
     font-size: 4rem;
-    color: #cd9f2c;
+    color: #eed186;
     font-style: normal;
     font-weight: 400;
     margin: 1rem 0;
@@ -181,9 +181,9 @@ section {
 .wedding-date {
     font-family: 'Cinzel', serif;
     font-size: 1.8rem;
-    color: #cd9f2c;
+    color: #eed186;
     letter-spacing: 0.2em;
-    font-weight: 400;
+    font-weight: 450;
     margin-top: 2rem;
 }
 
