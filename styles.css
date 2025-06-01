@@ -104,7 +104,7 @@ section {
 
 .geometric-frame {
     position: relative;
-    padding: 6rem 8rem;
+    padding: 8rem 10rem;
     margin: 2rem;
     display: flex;
     flex-direction: column;
@@ -121,68 +121,33 @@ section {
     right: 0;
     bottom: 0;
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    border: 2px solid #C5A572;
+    border: 1px solid #C5A572;
     z-index: 1;
 }
 
-.geometric-frame::after {
-    content: '';
+.frame-line {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    border: 1px solid rgba(197, 165, 114, 0.3);
-    z-index: 1;
+    width: 300px;
+    height: 1px;
+    background: #C5A572;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-/* Corner decorations */
-.frame-corner {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    border: 2px solid #C5A572;
-    z-index: 2;
+.frame-line-top {
+    top: -60px;
 }
 
-.frame-corner-tl {
-    top: 0;
-    left: 25%;
-    transform: translate(-50%, -50%) rotate(45deg);
-    border-right: none;
-    border-bottom: none;
+.frame-line-bottom {
+    bottom: -60px;
 }
 
-.frame-corner-tr {
-    top: 0;
-    right: 25%;
-    transform: translate(50%, -50%) rotate(135deg);
-    border-left: none;
-    border-bottom: none;
-}
-
-.frame-corner-bl {
-    bottom: 0;
-    left: 25%;
-    transform: translate(-50%, 50%) rotate(-45deg);
-    border-right: none;
-    border-top: none;
-}
-
-.frame-corner-br {
-    bottom: 0;
-    right: 25%;
-    transform: translate(50%, 50%) rotate(45deg);
-    border-left: none;
-    border-top: none;
-}
-
-/* Content positioning */
+/* Adjust spacing for names */
 .couple-names {
     position: relative;
     z-index: 3;
     margin: 0;
+    padding: 2rem 0;
 }
 
 .couple-names {
