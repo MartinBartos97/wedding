@@ -1110,14 +1110,9 @@ section {
 }
 
 .place-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-}
-
-.venue-details {
-    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .venue-card {
@@ -1134,6 +1129,14 @@ section {
     transform: translateY(-10px);
     border-color: #d4af37;
     box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+}
+
+.venue-buttons {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
 }
 
 .venue-card h3 {
@@ -1200,11 +1203,21 @@ section {
 
 @media (max-width: 768px) {
     .place-content {
-        grid-template-columns: 1fr;
+        padding: 0 1rem;
     }
     
-    .map-container {
-        height: 300px;
+    .venue-card {
+        padding: 2rem;
+    }
+    
+    .venue-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .directions-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
     }
 }
 
