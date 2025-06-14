@@ -45,12 +45,27 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
+            
+            // Add a slight horizontal animation based on event position
+            const event = entry.target;
+            if (event.classList.contains('timeline-event')) {
+                const isEven = Array.from(event.parentNode.children).indexOf(event) % 2 === 0;
+                event.style.transform = isEven ? 'translateX(0)' : 'translateX(0)';
+            }
         }
     });
 }, observerOptions);
 
 // Observe timeline events
-document.querySelectorAll('.timeline-event').forEach(event => {
+document.querySelectorAll('.timeline-event').forEach((event, index) => {
+    // Set initial state
+    const isEven = index % 2 === 0;
+    event.style.opacity = '0';
+    event.style.transform = isEven ? 'translateX(-20px)' : 'translateX(20px)';
+    
+    // Add staggered animation delay
+    event.style.animationDelay = `${index * 0.1}s`;
+    
     observer.observe(event);
 });
 

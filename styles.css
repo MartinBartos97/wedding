@@ -264,6 +264,17 @@ section {
     50% { opacity: 1; transform: scale(1.2); }
 }
 
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Section Styles */
 .section-title {
     font-family: 'Dancing Script', cursive;
@@ -358,74 +369,66 @@ section {
 }
 
 .timeline-section .container {
-    max-width: 1400px;
+    max-width: 800px;
 }
 
 .tree-container {
     position: relative;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 2rem;
     max-width: 100%;
 }
 
-/* Horizontal line */
+/* Vertical line */
 .tree-trunk {
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 47%;
-    height: 6px;
-    background: linear-gradient(90deg, #8d6e63, #5d4037);
-    transform: translateY(-50%);
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: linear-gradient(180deg, #8d6e63, #5d4037);
+    transform: translateX(-50%);
     border-radius: 3px;
 }
 
 /* Timeline events container */
 .timeline-events-container {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    gap: 1rem;
     position: relative;
-    padding: 4rem 0;
-    align-items: start;
+    padding: 2rem 0;
 }
 
 .timeline-event {
     position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    margin: 2rem 0;
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
-    min-height: 120px; /* Fixed minimum height instead of 100% */
+    width: 100%;
 }
 
-/* Alternating top/bottom events */
+/* Alternating left/right events */
 .timeline-event:nth-child(even) {
-    margin-top: 140px; /* Increased from 100px to move events lower */
-    padding-top: 40px;
+    flex-direction: row-reverse;
 }
 
-.timeline-event:nth-child(odd) {
-    margin-bottom: 100px;
-    padding-bottom: 40px;
-}
-
-/* Vertical connection lines */
+/* Horizontal connection lines */
 .event-branch {
     position: absolute;
-    width: 3px;
-    height: 60px; /* Increased to match new spacing */
+    height: 3px;
+    width: 60px;
     background: #8d6e63;
     transition: all 0.3s ease;
 }
 
-.timeline-event:nth-child(even) .event-branch {
-    top: 0; /* Adjusted to connect with content */
+.timeline-event:nth-child(odd) .event-branch {
+    right: 50%;
+    margin-right: 3px;
 }
 
-.timeline-event:nth-child(odd) .event-branch {
-    bottom: 0; /* Adjusted to connect with content */
+.timeline-event:nth-child(even) .event-branch {
+    left: 50%;
+    margin-left: 3px;
 }
 
 .event-content {
@@ -434,8 +437,7 @@ section {
     border: 1px solid rgba(205, 159, 44, 0.3);
     border-radius: 15px;
     padding: 1.2rem;
-    width: 130%;
-    margin-left: -15%;
+    width: calc(50% - 80px);
     text-align: center;
     transition: all 0.3s ease;
     min-height: 120px;
@@ -445,9 +447,13 @@ section {
 }
 
 .timeline-event:hover .event-content {
-    transform: translateY(-5px);
+    transform: translateX(-5px);
     border-color: #cd9f2c;
     box-shadow: 0 15px 30px rgba(205, 159, 44, 0.2);
+}
+
+.timeline-event:nth-child(even):hover .event-content {
+    transform: translateX(5px);
 }
 
 .event-content h4 {
@@ -471,91 +477,54 @@ section {
     color: #cd9f2c;
     font-size: 1rem;
     white-space: nowrap;
-}
-
-.timeline-event:nth-child(even) .event-time {
-    bottom: -25px; /* Adjusted to be closer to content */
-}
-
-.timeline-event:nth-child(odd) .event-time {
-    top: -25px; /* Adjusted to be closer to content */
-}
-
-@media (max-width: 1200px) {
-    .timeline-section .container {
-        max-width: 1200px;
-    }
-    
-    .timeline-events-container {
-        grid-template-columns: repeat(5, 1fr);
-        gap: 1rem;
-    }
-
-    .timeline-event:nth-child(n+6) {
-        margin-top: 220px; /* Adjusted for new spacing */
-        padding-top: 40px;
-    }
-
-    .timeline-event:nth-child(-n+5) {
-        margin-bottom: 0;
-        padding-bottom: 40px;
-    }
-
-    .tree-trunk {
-        top: calc(50% - 100px); /* Adjusted for new spacing */
-    }
-
-    .event-content {
-        width: 120%;
-        margin-left: -10%;
-    }
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(26, 35, 126, 0.9);
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    border: 1px solid rgba(205, 159, 44, 0.3);
 }
 
 @media (max-width: 768px) {
-    .timeline-events-container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.8rem;
+    .timeline-section .container {
+        max-width: 100%;
+        padding: 0 1rem;
     }
 
-    .timeline-event:nth-child(n+4) {
-        margin-top: 220px; /* Adjusted for new spacing */
+    .tree-container {
+        padding: 1rem;
     }
 
-    .timeline-event:nth-child(n+7) {
-        margin-top: 400px; /* Adjusted for new spacing */
+    .tree-trunk {
+        left: 30px;
+    }
+
+    .timeline-event {
+        flex-direction: row !important;
+        margin-left: 30px;
     }
 
     .event-content {
-        width: 110%;
-        margin-left: -5%;
+        width: calc(100% - 60px);
+        margin-left: 30px;
+    }
+
+    .event-branch {
+        width: 30px;
+        left: 0 !important;
+        margin-left: 30px !important;
+    }
+
+    .event-time {
+        left: 30px;
+        transform: none;
     }
 }
 
 @media (max-width: 480px) {
-    .timeline-events-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
-    }
-
-    .timeline-event:nth-child(n+3) {
-        margin-top: 220px; /* Adjusted for new spacing */
-    }
-
-    .timeline-event:nth-child(n+5) {
-        margin-top: 400px; /* Adjusted for new spacing */
-    }
-
-    .timeline-event:nth-child(n+7) {
-        margin-top: 580px; /* Adjusted for new spacing */
-    }
-
-    .timeline-event:nth-child(n+9) {
-        margin-top: 760px; /* Adjusted for new spacing */
-    }
-
     .event-content {
-        width: 100%;
-        margin-left: 0;
+        width: calc(100% - 40px);
+        margin-left: 20px;
     }
 }
 
@@ -890,43 +859,7 @@ section {
         grid-template-columns: 1fr;
     }
     
-    .timeline-section {
-        padding: 4rem 0;
-    }
 
-    .tree-container {
-        padding: 2rem 10px;
-    }
-
-    .timeline-event {
-        margin: 3rem 0;
-    }
-    
-    .timeline-event.left,
-    .timeline-event.right {
-        padding: 0;
-        justify-content: flex-start;
-        margin-left: 80px; /* Space for the trunk and branch */
-    }
-
-    .tree-trunk {
-        left: 40px;
-    }
-
-    .event-branch {
-        width: 40px;
-    }
-
-    .timeline-event.left .event-branch,
-    .timeline-event.right .event-branch {
-        left: -40px;
-        right: auto;
-    }
-    
-    .event-content {
-        width: calc(100% - 40px);
-        max-width: none;
-    }
     
     .nav-container {
         gap: 1rem;
