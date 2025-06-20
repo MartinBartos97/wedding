@@ -419,7 +419,7 @@ section {
     width: 60px;
     background: #8d6e63;
     transition: all 0.3s ease;
-    top: 20px;
+    top: 40px;
 }
 
 .timeline-event:nth-child(odd) .event-branch {
@@ -445,7 +445,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .timeline-event:hover .event-content {
