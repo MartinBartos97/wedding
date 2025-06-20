@@ -400,7 +400,7 @@ section {
 .timeline-event {
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin: 2rem 0;
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
@@ -419,6 +419,7 @@ section {
     width: 60px;
     background: #8d6e63;
     transition: all 0.3s ease;
+    top: 20px;
 }
 
 .timeline-event:nth-child(odd) .event-branch {
@@ -444,6 +445,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .timeline-event:hover .event-content {
@@ -483,6 +485,7 @@ section {
     padding: 0.5rem 1rem;
     border-radius: 15px;
     border: 1px solid rgba(205, 159, 44, 0.3);
+    top: 8px;
 }
 
 @media (max-width: 768px) {
